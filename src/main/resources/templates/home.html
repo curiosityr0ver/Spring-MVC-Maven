@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Alien Directory</title>
+</head>
+<body>
+
+<h2>New Alien</h2>
+
+<form method="post" th:action="@{/alien/create}">
+    <h3>Enter Your ID:</h3>
+    <input type="text" name="alienID" required />
+
+    <h3>Enter Your Name:</h3>
+    <input type="text" name="alienName" required />
+
+    <button type="submit">Add</button>
+</form>
+
+<div th:if="${alien != null}">
+    <h3>
+        Alien Registered:
+        <span th:text="${alien.aname}"></span>
+    </h3>
+</div>
+
+<script th:if="${alien != null}">
+    alert("Alien registered successfully!");
+</script>
+
+</body>
+</html>

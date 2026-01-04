@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+</head>
+<body>
+
+<h2>Result</h2>
+
+<p th:if="${result != null}">
+    Sum is: <strong th:text="${result}"></strong>
+</p>
+
+<a th:href="@{/home}">Back</a>
+
+</body>
+</html>

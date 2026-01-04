@@ -24,6 +24,10 @@
     </h3>
 </div>
 
+<div>
+    <h4>Welcome back <span th:text="${welcomeMessage}"></span></h4>
+</div>
+
 <script th:if="${alien != null}">
     alert("Alien registered successfully!");
 </script>

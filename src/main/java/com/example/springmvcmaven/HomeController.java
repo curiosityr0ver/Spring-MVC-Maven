@@ -1,6 +1,7 @@
 package com.example.springmvcmaven;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -13,13 +14,14 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/add")
-    @ResponseBody
-    public int addNumbers(
+    @PostMapping("/add")
+    public String addNumbers(
             @RequestParam int a,
-            @RequestParam int b
+            @RequestParam int b,
+            Model model
     ) {
 
-        return a + b;
+        model.addAttribute("result", a+b);
+        return "index";
     }
 }

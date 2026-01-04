@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Two Numbers</title>
+</head>
+<body>
+
+<h2>Add Two Numbers</h2>
+
+<form method="post" th:action="@{/home/add}">
+    <input type="number" name="a" placeholder="Enter a" required />
+    <input type="number" name="b" placeholder="Enter b" required />
+    <button type="submit">Add</button>
+</form>
+
+<div th:if="${result != null}">
+    <h3>Result: <span th:text="${result}"></span></h3>
+</div>
+
+</body>
+</html>

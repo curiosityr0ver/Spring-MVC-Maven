@@ -22,4 +22,13 @@ public class AlienRepository {
 
         return aliens;
     }
+
+    @Transactional
+    public void createAlien(
+            Alien alien
+    ) {
+        Session session = sessionFactory.getCurrentSession();
+        session.persist(alien);
+
+    }
 }

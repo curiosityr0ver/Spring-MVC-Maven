@@ -5,23 +5,6 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!-- JDBC -->
-        <property name="hibernate.connection.driver_class">
-            com.mysql.cj.jdbc.Driver
-        </property>
-
-        <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/telusco
-        </property>
-
-        <property name="hibernate.connection.username">
-            root
-        </property>
-
-        <property name="hibernate.connection.password">
-            admin
-        </property>
-
         <!-- Dialect -->
         <property name="hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
@@ -30,12 +13,6 @@
         <!-- Debug -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-
-        <!-- c3p0 -->
-        <property name="hibernate.c3p0.min_size">5</property>
-        <property name="hibernate.c3p0.max_size">20</property>
-        <property name="hibernate.c3p0.timeout">300</property>
-        <property name="hibernate.c3p0.max_statements">50</property>
 
         <!-- Entity -->
         <mapping class="com.example.springmvcmaven.model.Alien"/>

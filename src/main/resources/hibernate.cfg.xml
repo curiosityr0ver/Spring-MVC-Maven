@@ -11,7 +11,7 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/testdb
+            jdbc:mysql://localhost:3306/telusco
         </property>
 
         <property name="hibernate.connection.username">
@@ -19,7 +19,7 @@
         </property>
 
         <property name="hibernate.connection.password">
-            password
+            admin
         </property>
 
         <!-- Dialect -->

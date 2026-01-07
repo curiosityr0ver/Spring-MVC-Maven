@@ -31,4 +31,13 @@ public class AlienRepository {
         session.persist(alien);
 
     }
+
+    @Transactional
+    public Alien getAlienById(String id) {
+        System.out.println("here is the id: " + id);
+        Session session = sessionFactory.getCurrentSession();
+
+        Alien alien = session.find(Alien.class, id);
+        return alien;
+    }
 }

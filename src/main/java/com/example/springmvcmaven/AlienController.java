@@ -56,4 +56,16 @@ public class AlienController {
         m.addAttribute("aliens", repository.getAliens());
         return "aliens";
     }
+
+    @GetMapping("/{id}")
+    public String getAlienById(
+            @PathVariable String id,
+            Model m
+    ) {
+        System.out.println("Alien's Id:: " + id);
+        Alien alien = repository.getAlienById(id);
+        m.addAttribute("alien", alien);
+
+        return "alien";
+    }
 }

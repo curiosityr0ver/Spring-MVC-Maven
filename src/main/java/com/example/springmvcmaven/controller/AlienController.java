@@ -21,7 +21,7 @@ public class AlienController {
     ) {
 
         List<Alien> aliens;
-        if(prefix != null && !prefix.isBlank()) {
+        if (prefix != null && !prefix.isBlank()) {
             aliens = repository.findByAnameStartingWith(prefix);
         } else {
             aliens = repository.findAll();
@@ -39,12 +39,10 @@ public class AlienController {
 
     @PostMapping()
     Alien createAlien(
-            @RequestBody String name
+            @RequestBody Alien alien
     ) {
-
-        Alien alien = new Alien();
-        alien.setAname(name);
-
-        return repository.save(alien);
+        System.out.println(alien);
+        repository.save(alien);
+        return alien;
     }
 }

@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository
+//@Repository
 public class AlienRepository {
 
-    @Autowired
+//    @Autowired
     private SessionFactory sessionFactory;
 
     @Transactional

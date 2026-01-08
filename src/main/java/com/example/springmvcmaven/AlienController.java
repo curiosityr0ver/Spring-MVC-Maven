@@ -16,8 +16,8 @@ import java.util.List;
 @RequestMapping("/alien")
 public class AlienController {
 
-    @Autowired
-    AlienRepository repository;
+//    @Autowired
+//    AlienRepository repository;
 
     @Autowired
     AlienJPARepo jpaRepo;
@@ -42,7 +42,7 @@ public class AlienController {
         Alien a = new Alien();
 //        a.setAid(alienID);
         a.setAname(alienName);
-        repository.createAlien(a);
+//        repository.createAlien(a);
         System.out.println("Alien Created !");
         return "redirect:/alien/all";
     }
@@ -68,7 +68,8 @@ public class AlienController {
             Model m
     ) {
         System.out.println("Alien's Id:: " + id);
-        Alien alien = repository.getAlienById(id);
+//        Alien alien = repository.getAlienById(id);
+        Alien alien = jpaRepo.findById(Integer.parseInt(id)).orElse(null);
         m.addAttribute("alien", alien);
 
         return "alien";

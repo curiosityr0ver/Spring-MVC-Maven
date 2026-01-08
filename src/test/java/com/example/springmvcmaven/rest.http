@@ -1,0 +1,21 @@
+GET http://localhost:8080/alien/all
+Accept: application/json
+
+###
+
+GET http://localhost:8080/alien/103
+Accept: application/json
+
+###
+
+GET http://localhost:8080/alien/all?prefix=hir
+Accept: application/json
+
+###
+
+
+
+
+
+
+

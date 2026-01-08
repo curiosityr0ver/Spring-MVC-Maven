@@ -7,22 +7,22 @@ import jakarta.persistence.*;
 public class Alien {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String aid;
+    private Integer aid;
     private String aname;
 
     public Alien() {
     }
 
-    public Alien(String aid, String aname) {
+    public Alien(Integer aid, String aname) {
         this.aid = aid;
         this.aname = aname;
     }
 
-    public String getAid() {
+    public Integer getAid() {
         return aid;
     }
 
-    public void setAid(String aid) {
+    public void setAid(Integer aid) {
         this.aid = aid;
     }
 

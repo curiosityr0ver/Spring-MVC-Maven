@@ -1,6 +1,7 @@
 package com.example.springmvcmaven;
 
 import com.example.springmvcmaven.model.Alien;
+import com.example.springmvcmaven.repository.AlienJPARepo;
 import com.example.springmvcmaven.repository.AlienRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ public class AlienController {
 
     @Autowired
     AlienRepository repository;
+
+    @Autowired
+    AlienJPARepo jpaRepo;
 
     @ModelAttribute
     public void modelData(Model m) {
@@ -53,7 +57,8 @@ public class AlienController {
 //        );
 //        m.addAttribute("aliens", aliens);
 
-        m.addAttribute("aliens", repository.getAliens());
+//        m.addAttribute("aliens", repository.getAliens());
+        m.addAttribute("aliens", jpaRepo.findAll());
         return "aliens";
     }
 

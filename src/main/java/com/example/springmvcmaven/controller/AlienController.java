@@ -37,7 +37,7 @@ public class AlienController {
         return repository.findById(id).orElse(null);
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     Alien createAlien(
             @RequestBody Alien alien
     ) {

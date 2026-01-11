@@ -28,6 +28,11 @@ public class ProductService {
         return repository.findByWarrantyBefore(Instant.now().plus(30, ChronoUnit.DAYS));
     }
 
+//    create product
+    public Product createProduct(Product product) {
+        return repository.save(product);
+    }
+
 
 
 }

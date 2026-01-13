@@ -6,6 +6,10 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -17,9 +21,29 @@ public class SecurityConfig {
         return http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+//                .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+
+        UserDetails user = User
+                .withDefaultPasswordEncoder()
+                .username("kiran")
+                .password("kiran")
+                .roles("USER")
+                .build();
+
+        UserDetails user2 = User
+                .withDefaultPasswordEncoder()
+                .username("navin")
+                .password("navin")
+                .roles("ADMIN")
+                .build();
+
+        return new InMemoryUserDetailsManager(user, user2);
     }
 }
